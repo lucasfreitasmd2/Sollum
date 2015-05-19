@@ -1,0 +1,426 @@
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    body{
+        background: url(../img/bgbody.png);
+    }
+    .bgheader{
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+        background: #d16b1b;
+        /*overflow: hidden;*/
+    }
+    .bgheader header{
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .bgheader header .logo{
+        width: 280px;
+        height: auto;
+        margin: 0 auto;
+    }
+    .bgheader header .logo img{
+        width: 100%;
+        display: block;
+    }
+    .bgmenu{
+        width: 100%;
+        height: auto;
+        background: #31302e;
+        padding: 10px;
+    }
+    .bgmenu nav.menu{
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .bgmenu nav.menu ul{
+        list-style: none;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+    .mob{
+        color: #fff;
+        display: block;
+    }
+    .mob img{
+        display: block;
+    }
+    .bgmenu nav.menu ul li a{
+        display: block;
+        /*float: left;*/
+        /*padding: 15px 30px 15px 0px;*/
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 18px;
+    }
+    .bgmenu nav.menu ul li a:hover, .atv{
+        color: #d16b1b!important;
+    }
+    .bgfooter{
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        background: #d16b1b;
+    }
+    .bgfooter footer{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .bgfooter footer h6{
+        color: #474240;
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .bgfooter footer h6 a{
+        color: #74390c;
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: lowercase;
+        text-decoration: none;
+    }
+    .main{
+        width: 90%;
+        height: auto;
+        padding: 20px 20px 20px 20px;
+        background: #484644;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .main.empresa .dir img{
+        display: block;
+        margin-bottom: 12px;
+    }
+    .main .capaPage{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .main .capaPage img{
+        width: 100%;
+        display: block;
+    }
+    .main h1{
+        font-weight: bold;
+        font-size: 24px;
+        color: #d16b1b;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+    .main h2{
+        font-weight: normal;
+        font-size: 20px;
+        color: #d16b1b;
+        text-transform: none;
+        margin-bottom: 10px;
+    }
+    .main p{
+        color: #fff;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .main .esq{
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .main .dir{
+        width: 100%;
+        height: auto;
+    }
+    blockquote{
+        color: #333;
+        font-size: 14px;
+        font-style: italic;
+        padding: 10px;
+        background: #dfdfdf;
+        border-left: 5px solid #333;
+        margin-bottom: 10px;    
+    }
+    blockquote span{
+        display: block;
+        margin-top: 5px;
+        font-style: normal;
+        font-weight: bold;
+    }
+    .produtos{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    /*.produtos:after{
+        content: "";
+        clear: both;   
+    }*/
+    .produtos .i-produtos{
+        width: 240px;
+        height: 160px;
+        float: left;
+        padding: 10px;
+    }
+    .flip-container {
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -ms-perspective: 1000;
+        perspective: 1000;
+
+        -ms-transform: perspective(1000px);
+        -moz-transform: perspective(1000px);
+        -moz-transform-style: preserve-3d; 
+        -ms-transform-style: preserve-3d; 
+    }
+    .flip-container:hover .back, .flip-container.hover .back {
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    .flip-container:hover .front, .flip-container.hover .front {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+    .flip-container, .front, .back {
+        width: 100%;
+        height: 100%;
+    }
+    .flipper {
+        -webkit-transition: 0.6s;
+        -webkit-transform-style: preserve-3d;
+        -ms-transition: 0.6s;
+
+        -moz-transition: 0.6s;
+        -moz-transform: perspective(1000px);
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+
+        transition: 0.6s;
+        transform-style: preserve-3d;
+
+        position: relative;
+    }
+    .front, .back {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        -webkit-transition: 0.6s;
+        -webkit-transform-style: preserve-3d;
+
+        -moz-transition: 0.6s;
+        -moz-transform-style: preserve-3d;
+
+        -o-transition: 0.6s;
+        -o-transform-style: preserve-3d;
+
+        -ms-transition: 0.6s;
+        -ms-transform-style: preserve-3d;
+
+        transition: 0.6s;
+        transform-style: preserve-3d;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .front {
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        z-index: 2;
+    }
+    .back {
+        background: lightblue;
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+    }
+    .prod_topo{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+    .prod_topo .marca{
+        float: left;
+    }
+    .prod_topo .aux{
+        display: none;
+    }
+    .prod_topo .aux img{
+        margin-left: 20px;
+        height: 66px;
+    }
+    .main p a{
+        color: #d16b1b;
+        text-decoration: none;
+    }
+    .main p a:hover{
+        text-decoration: underline;
+    }
+    .mapa{
+        width: 100%;
+        height: 300px;
+    }
+    .contato{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    .contato .esq form fieldset{
+        border: 0;
+        margin-bottom: 5px;
+    }
+    .contato .esq form fieldset label{
+        color: #fff;
+        font-size: 14px;
+        margin-bottom: 5px;
+        display: block;
+    }
+    .contato .esq form fieldset input{
+        border: 0;
+        width: 100%;
+        padding: 4px;
+    }
+    .contato .esq form fieldset textarea{
+        border: 0;
+        width: 100%;
+        height: 120px;
+        max-width: 100%;
+        max-height: 120px;
+        padding: 4px;
+    }
+    .contato .esq form input[type="submit"]{
+        background: #b55b15;
+        padding: 6px 18px;
+        color: #fff;
+        font-weight: bold;
+        border: 0;
+    }
+    .contato .dir{
+        text-align: left;
+        margin-top: 10px;
+    }
+    .contato .dir p span{
+        color: #d16b1b;
+        text-transform: uppercase;
+        display: block;
+        font-weight: bold;
+    }
+    .arquitetos{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        padding: 10px 0;
+    }
+    .arquitetos .i-arquitetos{
+        width: 50%;
+        height: auto;
+        float: left;
+        border: 5px solid #484644;
+    } 
+    .arquitetos .i-arquitetos:hover{
+        border: 5px solid #d16b1b;
+    } 
+    .arquitetos .i-arquitetos img{
+        width: 100%;
+        height: 100%;
+        display: block;
+    } 
+    .curri_arquiteto{
+        /*margin-top: 20px;*/
+        overflow: hidden;
+    }
+    .curri_arquiteto figure{
+        width: 240px;
+        height: auto;
+        float: left;
+        margin-right: 10px;
+    }
+    .curri_arquiteto figure img{
+        width: 100%;
+        display: block;
+    }
+    .projetos_arquiteto{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+    .projetos_arquiteto figure{
+        width: 25%;
+        height: 180px;
+    }
+    .box-photo{ 
+        /*float:left;*/ 
+    }
+    .col3{ 
+        width:100%; 
+        margin-right: 1%; 
+        margin-bottom: 1%; 
+        overflow: hidden;
+    }
+    .col3 img { 
+        width:100%; 
+    }
+    .form-revel{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    .form-revel fieldset{
+        border: 0;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+    .form-revel fieldset fieldset{
+        float: left;
+        width: 49%;
+        margin-bottom: 0;
+    }
+    .form-revel fieldset fieldset:last-of-type{
+        float: right;
+        width: 49%;
+        margin-bottom: 0;
+    }
+    .form-revel fieldset input{
+        width: 100%;
+        padding: 5px;
+        border: 0;
+    }
+    .form-revel fieldset select{
+        width: 100%;
+        padding: 4px;
+        border: 0;
+    }
+    .form-revel fieldset textarea{
+        width: 100%;
+        height: 80px;
+        max-width: 100%;
+        max-height: 80px;
+        padding: 5px;
+        border: 0;
+    }
+    .form-revel input[type="submit"], .form-revel input[type="button"]{
+        padding: 4px 16px;
+        background: #d16b1b;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 0;
+        float: right;
+    }
+
+}
