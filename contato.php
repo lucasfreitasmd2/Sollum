@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Contato | Sollum Revesimentos e Acabamentos</title>
         <?php include_once 'includes/head.php'; ?>
-        <script>
+        <script> 
             function validaContato(formulario) {
                 if (formulario.nome.value == '') {
                     $('#erroNome').fadeIn('slow'); //se o campo nome estiver vazio, o jquery exibe a div #erroNome que até então estava escondida pelo CSS
