@@ -5,6 +5,8 @@
         <title>Arquitetos | Sollum Revesimentos e Acabamentos</title>
         <?php include_once 'includes/head.php'; ?>
         <!--<script src="js/init.js"></script>-->
+        <script src="js/jquery.js"></script>
+        <script src="js/revele-se.js"></script>
     </head>
     <body>     
         <?php include_once 'includes/header.php'; ?>
@@ -27,22 +29,22 @@
                 </p>                
             </div>
             <div class="esq">
-                <form class="form-revel">
+                <form class="form-revel" id="frmRevelese">
                     <fieldset>
-                        <input type="text" name="nome" placeholder="Nome"/>
+                        <input type="text" id="nome" placeholder="Nome" />
                     </fieldset>
                     <fieldset>
-                        <input type="text" name="mail" placeholder="E-mail"/>
+                        <input type="text" id="email" placeholder="E-mail" />
                     </fieldset>
                     <fieldset>
-                        <input type="text" name="telefone" placeholder="Telefone"/>
+                        <input type="text" id="telefone" placeholder="Telefone" />
                     </fieldset>
                     <fieldset>
                         <fieldset>
-                            <input type="text" name="cidade" placeholder="Cidade"/>
+                            <input type="text" id="cidade" placeholder="Cidade" />
                         </fieldset>
                         <fieldset>
-                            <select name="estado">
+                            <select id="estado">
                                 <option value="">Selecione o Estado</option>
                                 <option value="ac">Acre</option>
                                 <option value="al">Alagoas</option>
@@ -75,9 +77,10 @@
                         </fieldset>
                     </fieldset>
                     <fieldset>
-                        <textarea name="curriculo" placeholder="Escreva um breve currículo sobre você"></textarea>
+                        <textarea id="curriculo" placeholder="Escreva um breve currículo sobre você" "></textarea><br />
+                        <span id="spanError" class="erroValid"></span>
                     </fieldset>
-                    <input type="submit" value="Enviar"/>
+                    <input type="button" value="Enviar" id="btnRevelese"/>
                 </form>
             </div>
             <div class="cl"></div>
