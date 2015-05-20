@@ -1,0 +1,263 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+body{
+    background: url(../img/bgbody.png);
+}
+
+/* PÁGINA DE LOGIN */
+.box_login{
+    width: 350px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -175px;
+    margin-left: -200px;
+    background: #474240;
+    border: 1px solid #4c4e4d;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+.box_login figure{
+    padding: 20px 25px;
+    background: #d16b1b;
+}
+.box_login figure img{
+    width: 100%;
+    display: block;
+}
+.box_login form{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 25px;
+}
+.box_login form input{
+    width: 100%;
+    height: 30px;
+    background: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 0;
+}
+.box_login ::-webkit-input-placeholder{
+    color: #474240;
+}
+.box_login :-moz-placeholder{
+    color: #474240;
+}
+.box_login ::-moz-placeholder{
+    color: #474240; 
+}
+.box_login :-ms-input-placeholder{
+    color: #474240;
+}
+.box_login form input[type='submit'],.box_login form input[type='button']{
+    width: 100%;
+    height: 30px;
+    background: #1b1b1b;
+    margin-bottom: 0px;
+    color: #fff;
+}
+.box_login a.esqueciasenha{
+    font-size: 12px;
+    font-weight: normal;
+    color: #d16b1b;
+    margin-top: 10px;
+    display: block;
+    text-decoration: none;
+}
+.box_login a.esqueciasenha:hover{
+    text-decoration: underline;
+}
+
+/* PÁGINAS INTERNAS */
+header{
+    width: 100%;
+    height: auto;
+    padding: 15px 50px;
+    background: #d16b1b;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+header .logo{
+    float: left;
+    width: 200px;
+}
+header .logo img{
+    width: 100%;
+    display: block;
+}
+header .aux_sup{
+    float: right;
+}
+header .aux_sup a{
+    display: block;
+    background: #484644;
+    color: #d16b1b;
+    text-transform: uppercase;
+    text-decoration: none;
+    float: left;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px;
+    border: 1px solid #484644;
+}
+header .aux_sup a:hover{
+    background: #d16b1b;
+    color: #484644;
+    border: 1px solid #484644;
+}
+.main{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 15px 50px;
+    background: #484644;
+    overflow: hidden;
+    margin-top: 65px;
+}
+.topo{
+    overflow: hidden;
+}
+.topo h1{
+    float: left;
+}
+.topo .exibirpor{
+    float: right;
+}
+.topo .exibirpor label{
+    color: #fff;
+    margin-right: 5px;
+    font-size: 12px;
+}
+h1{
+    font-weight: normal;
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+h1 span{
+    font-weight: bold;
+}
+p{
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.cad_usuario{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #dfdfdf;
+    overflow: hidden;
+}
+.cad_usuario p{
+    color: #333;
+}
+.cad_usuario p:last-of-type{
+    margin-bottom: 0;
+}
+.cad_usuario .dados{
+    float: left;
+    width: 85%; 
+}
+.cad_usuario .dados a{
+    text-decoration: none;
+    color: #333;
+}
+.cad_usuario .dados a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+.cad_usuario .situ{
+    width: 15%;
+    float: right;
+}
+.cad_usuario .situ a{
+    display: block;
+    padding: 5px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 14px;
+    background: #333;
+}
+.cad_usuario .situ a.aprovar:hover{
+    background: #2a991e;
+}
+.cad_usuario .situ a.aprovado{
+    background: #2a991e;
+}
+.cad_usuario .situ a.excluir:hover{
+    background: #940f0f;
+}
+
+/* INTERNA USUÁRIO */
+.form_user{
+    width: 50%;
+}
+.form_user fieldset{
+    border: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.form_user fieldset fieldset{
+    width: 49%;
+    float: left;
+    margin-bottom: 0;
+}
+.form_user fieldset fieldset:last-of-type{
+    width: 49%;
+    float: right;
+}
+.form_user fieldset label{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.form_user fieldset textarea{
+    border: 0;
+    padding: 5px;
+    width: 100%;
+    height: 200px;
+    max-width: 100%;
+    max-height: 200px;
+}
+.form_user fieldset input{
+    border: 0;
+    padding: 5px;
+    width: 100%;
+}
+.form_user fieldset input[type='file']{
+    background: #fff;
+}
+.form_user input[type='button']{
+    background: #d16b1b;
+    padding: 4px 10px;
+    border: 0;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
