@@ -14,7 +14,7 @@ $msgText .= "E-Mail: " . $mail . "<br>";
 $msgText .= "Telefone: " . $telefone . "<br>";
 $msgText .= "Mensagem: " . $mensagem . "</font>";
 
-if ($nome || $mail || $telefone || $mensagem == "") {
+if ($nome == '' && $mail == '' && $telefone = '' && $mensagem == "") {
     header('Location: contato.php');
 } else {
     mail($toText, $subjectText, $msgText, "From: $nome - $mail\n" . "MIME-Version: 1.0\n" . "Content-type: text/html; charset=utf-8");
