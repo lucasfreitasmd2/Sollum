@@ -1,10 +1,6 @@
-function apagarErro() {
-    $('#spanError').fadeOut(500);
-}
-
 $(document).ready(function () {
     $("input[type='text'], textarea").blur(function () {
-        apagarErro();
+        $('#spanError').fadeOut(500);
     });
 
     $("#btnRevelese").click(function () {
@@ -49,7 +45,11 @@ $(document).ready(function () {
         }else{
             $.post('control/revelese.php',{nome:nome, email:email,telefone:telefone,cidade:cidade,estado:estado,curriculo:curriculo},
             function(r){
-                console.log(r);
+                if(r == 0){
+                    $("#spanError").html('');
+                    $("#spanError").html('Este usuário já se encontra cadastrado em nossa base de dados!');
+                    $('#spanError').fadeIn('slow');
+                }
             });
             
         }

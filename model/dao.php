@@ -1,13 +1,12 @@
 <?php
-
 require_once 'revelese.php';
 
 class ReveleseDAO {
 
-    private $host = 'localhost';
-    private $user = 'root';
-    private $pass = '';
-    private $base = '';
+    private $host = '186.202.152.168';
+    private $user = 'mukkema11';
+    private $pass = 'mukk15';
+    private $base = 'mukkema11';
     private $Conn;
 
     function __construct() {
@@ -23,14 +22,15 @@ class ReveleseDAO {
                 estado = '" . $objRevelese->getEstado() . "',
                 curriculo = '" . $objRevelese->getCurriculo() . "',
                 status = 0,
-                senha = '" . $objRevelese->getSenha() . "'
+                senha = '" . $objRevelese->getSenha() . "',
+                nivel = 0
                ";
 
         $this->Conn->query($sql);
     }
 
-    public function listaArquiteto() {
-        $sql = "SELECT * FROM arquitetos a JOIN imagens i ON i.idArquiteto = a.idArquiteto ";
+    public function listaArquitetos() {
+        $sql = "SELECT * FROM arquitetos a JOIN imagens i ON i.idArquiteto = a.idArquiteto";
         
         $banco = $this->Conn->query($sql);
         
@@ -40,6 +40,16 @@ class ReveleseDAO {
         }
         
         return $linhas;
+    }
+    
+    public function verificaArquiteto(Revelese $objArquiteto){
+        $sql = " SELECT * FROM arquitetos WHERE email = '".$objArquiteto->getEmail()."' ";
+        
+        $banco = $this->Conn->query($sql);
+        
+        $linha = $banco->num_rows;
+        
+        return $linha;
     }
 
 }
