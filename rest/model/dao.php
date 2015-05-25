@@ -3,10 +3,18 @@ require_once 'arquiteto.php';
 
 class Admin {
 
+    /*
     private $host = '186.202.152.168';
     private $user = 'mukkema11';
     private $pass = 'mukk15';
     private $base = 'mukkema11';
+    */
+    
+    private $host = 'localhost';
+    private $user = 'root';
+    private $pass = '';
+    private $base = 'sollum';
+    
     private $Conn;
 
     function __construct() {
@@ -36,7 +44,8 @@ class Admin {
     public function aprovarArquiteto(Arquiteto $objArquiteto){
         $sql = "UPDATE arquitetos SET
                 status = 1,
-                senha = md5('".$objArquiteto->getSenha()."')
+                senha = md5('".$objArquiteto->getSenha()."'),
+                pasta = '".$objArquiteto->getPasta()."'
                 WHERE idArquiteto = ".$objArquiteto->getIdArquiteto();
         
         $this->Conn->query($sql);
@@ -74,11 +83,10 @@ class Admin {
     }
 
     
-    public function countFotos(Arquiteto $objArquiteto){
-        echo $sql = "SELECT count(*) AS quantidade
+    public function verPasta(Arquiteto $objArquiteto){
+        $sql = "SELECT pasta AS quantidade
                     FROM arquitetos a 
-                    JOIN trabalhos t ON t.idArquiteto = a.idArquiteto
-                    WHERE a.email = '".$objArquiteto->getEmail()."'";
+                        WHERE a.email = '".$objArquiteto->getEmail()."'";
         
         $banco = $this->Conn->query($sql);
         
@@ -86,6 +94,22 @@ class Admin {
         $linha = $linha['quantidade'];
         
         return $linha;
+    }
+    
+    
+    public function altArquiteto(Arquiteto $objArquiteto){
+        $sql = "
+                UPDATE arquitetos SET
+                nome = '".$objArquiteto->getNome()."',
+                email = '".$objArquiteto->getEmail()."',
+                telefone = '".$objArquiteto->getTelefone()."',
+                cidade = '".$objArquiteto->getCidade()."',
+                estado = '".$objArquiteto->getEstado()."',
+                curriculo = '".$objArquiteto->getCurriculo()."'
+                    WHERE idArquiteto = ".$objArquiteto->getIdArquiteto()."
+               ";
+        
+        $this->Conn->query($sql) or die($this->Conn->error);
     }
 }
 

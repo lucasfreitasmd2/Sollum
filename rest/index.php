@@ -22,3 +22,6 @@
         </div>
     </body>
 </html>
+<?php
+echo md5('123mudar');
+?>

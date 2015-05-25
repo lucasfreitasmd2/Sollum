@@ -10,10 +10,10 @@ class Arquiteto{
     private $senha;
     
     public function getIdArquiteto() {
-        return $this->idRevelese;
+        return $this->idArquiteto;
     }
     public function setIdArquiteto($idRevelese) {
-        $this->idRevelese = $idRevelese;
+        $this->idArquiteto = $idRevelese;
     }
     
 
