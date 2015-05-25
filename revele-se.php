@@ -5,7 +5,6 @@
         <title>Arquitetos | Sollum Revesimentos e Acabamentos</title>
         <?php include_once 'includes/head.php'; ?>
         <!--<script src="js/init.js"></script>-->
-        <script src="js/jquery.js"></script>
         <script src="js/revele-se.js"></script>
     </head>
     <body>     
@@ -37,7 +36,7 @@
                         <input type="text" id="email" placeholder="E-mail" />
                     </fieldset>
                     <fieldset>
-                        <input type="text" id="telefone" placeholder="Telefone" />
+                        <input type="number" id="telefone" placeholder="Telefone" />
                     </fieldset>
                     <fieldset>
                         <fieldset>
