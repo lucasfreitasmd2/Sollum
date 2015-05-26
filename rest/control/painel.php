@@ -13,10 +13,20 @@ switch ($opcao) {
     case 'aprovarArquiteto':
         $idArquiteto = addslashes($_POST['idArquiteto']);
         $senha = geraSenha(15);
-        $senha = geraSenha(15);
+        $pasta = md5($idArquiteto.date('YmdHis'));
 
         $objArquiteto->setIdArquiteto($idArquiteto);
         $objArquiteto->setSenha($senha);
+        $objArquiteto->setPasta($pasta);
+        
+        
+        //cria a estrutura de pastas de arquivos
+        if(!is_dir('../../uploads')){
+            //cria a pasta raiz de arquivos na primeira vez
+            mkdir('../../uploads');
+        }
+        //cria a pasta de arquivos do usuário
+        mkdir('../../uploads/'.$pasta);
 
         $objAdminDao->aprovarArquiteto($objArquiteto);
         emailArquiteto($objArquiteto);
