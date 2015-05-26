@@ -13,10 +13,11 @@ switch ($opcao) {
     case 'aprovarArquiteto':
         $idArquiteto = addslashes($_POST['idArquiteto']);
         $senha = geraSenha(15);
-        $senha = geraSenha(15);
+        $pasta = md5($idArquiteto.date('YmdHis'));
 
         $objArquiteto->setIdArquiteto($idArquiteto);
         $objArquiteto->setSenha($senha);
+        $objArquiteto->setPasta($pasta);
 
         $objAdminDao->aprovarArquiteto($objArquiteto);
         emailArquiteto($objArquiteto);
