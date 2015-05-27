@@ -7,19 +7,25 @@ function logar() {
         $("#spanError").html('');
         $("#spanError").html('O campo EMAIL é obrigatório!');
         $('#spanError').fadeIn('slow');
-    }else if(senha == ''){
+    } else if (senha == '') {
         $("#senha").focus();
         $("#spanError").html('');
         $("#spanError").html('O campo SENHA é obrigatório!');
         $('#spanError').fadeIn('slow');
-    }else {
+    } else {
         $.post('control/painel.php', {opcao: 'login', email: email, senha: senha},
         function (r) {
-            
-            if (r == 'usuario') {
+            console.log(r);
+//            return false;
+            if (r == 'admin') {
+                window.location = 'painel.php';
+            } else if (r == 'usuario') {
                 window.location = 'painel_user.php';
             } else {
-                window.location = 'painel.php';
+                $("#senha").focus();
+                $("#spanError").html('');
+                $("#spanError").html('Usuário ou senha incorretos!');
+                $('#spanError').fadeIn('slow');
             }
         })
     }

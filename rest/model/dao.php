@@ -3,18 +3,18 @@ require_once 'arquiteto.php';
 
 class Admin {
 
-    /*
     private $host = '186.202.152.168';
     private $user = 'mukkema11';
     private $pass = 'mukk15';
     private $base = 'mukkema11';
-    */
     
+    
+    /*
     private $host = 'localhost';
     private $user = 'root';
     private $pass = '';
     private $base = 'sollum';
-    
+    */
     private $Conn;
 
     function __construct() {
@@ -69,7 +69,7 @@ class Admin {
     
     
     public function verificaLogin(Arquiteto $objArquiteto){
-        $sql = "SELECT * FROM arquitetos WHERE email = '".$objArquiteto->getEmail()."' AND senha = MD5('".$objArquiteto->getSenha()."')";
+        $sql = "SELECT * FROM arquitetos WHERE email = '".$objArquiteto->getEmail()."' AND senha = '".MD5($objArquiteto->getSenha())."'";
         
         $banco = $this->Conn->query($sql);
         

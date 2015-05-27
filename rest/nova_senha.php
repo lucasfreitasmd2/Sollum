@@ -14,7 +14,7 @@
                 <input type="email" name="email" <?php if(isset($_GET['email'])){ echo 'value="'.$_GET['email'].'"'; } ?> required/>
                 <input type="password" name="senha" placeholder="Nova senha"/>
                 <input type="password" name="senha" placeholder="Repita a nova senha"/>
-                <input type="button" value="ALTERAR"/>
+                <input type="button" value="TROCAR SENHA"/>
             </form>
         </div>
     </body>

@@ -16,6 +16,15 @@ function excluir(id){
     }
 }
 
+function excluirFoto(pasta,nome){
+    if(confirm("Você tem certeza que deseja excluir essa foto?") === true){
+        $.post('control/painel.php',{opcao:'excluirFoto',pasta:pasta,nome:nome},
+        function(){
+            $("#divTrabalhos").load('listaTrabalhos.php');
+        });
+    }
+}
+
 
 $(document).ready(function(){
     if($("#listaArquitetos").length){

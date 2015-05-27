@@ -13,20 +13,20 @@ switch ($opcao) {
     case 'aprovarArquiteto':
         $idArquiteto = addslashes($_POST['idArquiteto']);
         $senha = geraSenha(15);
-        $pasta = md5($idArquiteto.date('YmdHis'));
+        $pasta = md5($idArquiteto . date('YmdHis'));
 
         $objArquiteto->setIdArquiteto($idArquiteto);
         $objArquiteto->setSenha($senha);
         $objArquiteto->setPasta($pasta);
-        
-        
+
+
         //cria a estrutura de pastas de arquivos
-        if(!is_dir('../../uploads')){
+        if (!is_dir('../../uploads')) {
             //cria a pasta raiz de arquivos na primeira vez
             mkdir('../../uploads');
         }
         //cria a pasta de arquivos do usuário
-        mkdir('../../uploads/'.$pasta);
+        mkdir('../../uploads/' . $pasta);
 
         $objAdminDao->aprovarArquiteto($objArquiteto);
         emailArquiteto($objArquiteto);
@@ -115,7 +115,7 @@ switch ($opcao) {
                 $tipoArquivo = '.' . $tipoArquivo['extension'];
 
                 if ($total++ <= 10) {
-                    move_uploaded_file($foto['tmp_name'], $pasta . '/' . md5($foto['name']).$tipoArquivo);
+                    move_uploaded_file($foto['tmp_name'], $pasta . '/' . md5($foto['name']) . $tipoArquivo);
                 }
             }
         }
@@ -141,19 +141,42 @@ switch ($opcao) {
         $objArquiteto->setCurriculo(addslashes($curriculo));
         $objArquiteto->setIdArquiteto(addslashes($idArquiteto));
 
-
-        $pasta = $objAdminDao->verPasta($objArquiteto);
-
         if ($_FILES['fotoPerfil']['name'] != '') {
+            $pasta = $objAdminDao->verPasta($objArquiteto);
             $tipoArquivo = pathinfo($_FILES['fotoPerfil']['name']);
             $tipoArquivo = '.' . $tipoArquivo['extension'];
-
-            move_uploaded_file($foto['tmp_name'], '../../uploads/' . $pasta . '/' . 'perfil.' . $tipoArquivo);
+            $nome = 'perfil' . $tipoArquivo;
+            $caminho = '../../uploads/' . $pasta ;
+            
+            $arquivos = scandir($caminho);
+//            var_dump($arquivos);
+            foreach($arquivos as $arquivo){
+//                echo 'aqui';
+                
+                if(stripos($arquivo,'perfil') !== false){
+                    echo $caminho.'/'.$arquivo;
+                    unlink($caminho.'/'.$arquivo);
+                }
+//                $arquivo
+            }
+            
+            
+            move_uploaded_file($_FILES['fotoPerfil']['tmp_name'], $caminho. '/' . $nome);
+            
         }
 
         $objAdminDao->altArquiteto($objArquiteto);
 
-        header('Location: ../painel_user.php');
+//        header('Location: ../painel_user.php');
+        break;
+        
+    case 'excluirFoto':
+        $pasta = addslashes($_POST['pasta']);
+        $nome = addslashes($_POST['nome']);
+        
+        $caminho = '../../uploads/'.$pasta.'/'.$nome;
+        
+        unlink($caminho);
         break;
 }
 
