@@ -58,6 +58,16 @@ $(document).ready(function () {
         $('.erroValid').fadeOut(500);
     })
 });
+
+function excluirFoto(pasta,imagem){
+    if(confirm("Você tem certeza que deseja excluir essa foto?") == true){
+        $.post('control/painel.php',{opcao:'excluirFoto',pasta:pasta,imagem:imagem},
+        function(r){
+            console.log(r);
+        });
+        $("#divTrabalhos").load('listaTrabalhos.php?id=' + $("#email").val());
+    }
+}
 function teste() {
     var fd = new FormData();
 //    fd.append('photo', file);

@@ -149,15 +149,11 @@ switch ($opcao) {
             $caminho = '../../uploads/' . $pasta ;
             
             $arquivos = scandir($caminho);
-//            var_dump($arquivos);
             foreach($arquivos as $arquivo){
-//                echo 'aqui';
-                
                 if(stripos($arquivo,'perfil') !== false){
                     echo $caminho.'/'.$arquivo;
                     unlink($caminho.'/'.$arquivo);
                 }
-//                $arquivo
             }
             
             
@@ -167,14 +163,14 @@ switch ($opcao) {
 
         $objAdminDao->altArquiteto($objArquiteto);
 
-//        header('Location: ../painel_user.php');
+        header('Location: ../painel_user.php');
         break;
         
     case 'excluirFoto':
         $pasta = addslashes($_POST['pasta']);
-        $nome = addslashes($_POST['nome']);
+        $imagem = addslashes($_POST['imagem']);
         
-        $caminho = '../../uploads/'.$pasta.'/'.$nome;
+        $caminho = '../../uploads/'.$pasta.'/'.$imagem;
         
         unlink($caminho);
         break;

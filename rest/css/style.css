@@ -93,6 +93,7 @@ header{
     right: 0;
     left: 0;
     top: 0;
+    z-index: 999;
 }
 header .logo{
     float: left;
@@ -251,24 +252,21 @@ p{
     padding: 5px;
     width: 100%;
 }
+.form_user fieldset select{
+    border: 0;
+    padding: 5px;
+    width: 100%;
+}
 .form_user fieldset input[type='file']{
     background: #fff;
 }
-.form_user input[type='button']{
+.form_user input[type='button'],.form_user input[type='submit']{
     background: #d16b1b;
     padding: 4px 10px;
     border: 0;
     font-weight: bold;
     color: #fff;
     text-transform: uppercase;
-}
-.form_user .input_perfil{
-    width: 300px;
-    height: auto;
-    margin-bottom: 10px;
-}
-.form_user .input_perfil img{
-    height: 200px;
 }
 .upload_fotos{
     width: 45%;
@@ -288,6 +286,25 @@ p{
     float: left;
     margin-right: 1%;
     margin-bottom: 1%;
+    position: relative;
+}
+.upload_fotos figure .adeus{
+    width: 18px;
+    background: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    opacity: 0;
+    padding: 2px;
+    background: rgba(255,255,255,0.8);
+}
+.upload_fotos figure .adeus img{
+    width: 100%;
+    display: block;
+}
+.upload_fotos figure:hover .adeus{
+    opacity: 1;
 }
 .upload_fotos figure img{
     width: 100%;
@@ -309,7 +326,7 @@ p{
     padding: 4px;
     width: 100%;    
 }
-.upload_fotos input[type='button']{
+.upload_fotos input[type='button'],.upload_fotos input[type='submit']{
     background: #d16b1b;
     padding: 4px 10px;
     border: 0;

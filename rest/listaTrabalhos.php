@@ -16,7 +16,7 @@ foreach ($ponteiro as $listar) {
         ?>
         <figure>
             <img src="../uploads/<?php echo $pasta.'/'.$listar; ?>" alt=""/>
-            <a href="javascrtipt:excluirFoto(<?php echo $pasta.','.$listar; ?>)" class="adeus"><img src="img/lixeira.png" alt=""/></a>
+            <a href="javascript:excluirFoto(<?php echo "'".$pasta."','".$listar."'"; ?>)" class="adeus"><img src="img/lixeira.png" alt=""/></a>
         </figure>
         <?php
     }
