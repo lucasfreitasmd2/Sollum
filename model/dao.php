@@ -1,4 +1,5 @@
 <?php
+
 require_once 'revelese.php';
 
 class ReveleseDAO {
@@ -29,26 +30,42 @@ class ReveleseDAO {
         $this->Conn->query($sql);
     }
 
-    public function listaArquitetos() {
-        $sql = "SELECT * FROM arquitetos a JOIN imagens i ON i.idArquiteto = a.idArquiteto";
-        
-        $banco = $this->Conn->query($sql);
-        
-        $linhas = array();
-        while ($linha = $banco->fetch_array()){
-            $linhas[] = $linha;
+    public function listaArquitetos($id) {
+        if($id != 0){
+            $where = 'AND idArquiteto != '.$id;
+        }else{
+            $where = '';
         }
         
+        $sql = "SELECT * FROM arquitetos WHERE pasta != '' AND status = 1 ".$where;
+
+        $banco = $this->Conn->query($sql);
+
+        $linhas = array();
+        while ($linha = $banco->fetch_array()) {
+            $linhas[] = $linha;
+        }
+
         return $linhas;
     }
-    
-    public function verificaArquiteto(Revelese $objArquiteto){
-        $sql = " SELECT * FROM arquitetos WHERE email = '".$objArquiteto->getEmail()."' ";
-        
+
+    public function verificaArquiteto(Revelese $objArquiteto) {
+        $sql = " SELECT * FROM arquitetos WHERE email = '" . $objArquiteto->getEmail() . "' ";
+
         $banco = $this->Conn->query($sql);
-        
+
         $linha = $banco->num_rows;
-        
+
+        return $linha;
+    }
+
+    public function listaArquiteto1($idArquiteto) {
+        $sql = "SELECT * FROM arquitetos WHERE idArquiteto = " . $idArquiteto;
+
+        $banco = $this->Conn->query($sql);
+
+        $linha = $banco->fetch_assoc();
+
         return $linha;
     }
 
